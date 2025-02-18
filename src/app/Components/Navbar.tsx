@@ -33,13 +33,13 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-gradient-to-r from-white/95 to-white/90 dark:from-gray-900/95 dark:to-gray-900/90 backdrop-blur-2xl shadow-lg border-b border-gray-100/30 dark:border-gray-700/30 sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-white/95 to-white/90 dark:from-blue-dark-800/95 dark:to-blue-dark-900/90 backdrop-blur-2xl shadow-lg border-b border-gray-100/30 dark:border-blue-dark-600/30 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo/Brand - Enhanced with stronger gradient and text shadow */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 hover:from-pink-500 hover:via-purple-500 hover:to-blue-600 transition-all duration-700 hover:scale-105 [text-shadow:_0_1px_20px_rgb(59_130_246_/_20%)]">
-              YourBrand
+            Cyphernix
             </Link>
           </div>
 
@@ -95,7 +95,7 @@ const Navbar = () => {
           isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden backdrop-blur-2xl`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-white/95 to-white/90 dark:from-gray-900/95 dark:to-gray-900/90">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-white/95 to-white/90 dark:from-blue-dark-800/95 dark:to-blue-dark-900/90">
           {menuItems.map((item) => (
             <Link
               key={item.name}

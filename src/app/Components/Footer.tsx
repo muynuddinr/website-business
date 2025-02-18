@@ -37,13 +37,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-white/95 to-white/90 dark:from-gray-900/95 dark:to-gray-900/90 border-t border-gray-100/30 dark:border-gray-700/30">
+    <footer className="bg-gradient-to-r from-white/95 to-white/90 dark:from-blue-dark-800/95 dark:to-blue-dark-900/90 border-t border-gray-100/30 dark:border-blue-dark-600/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <Link href="/" className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">
-              YourBrand
+              Cyphernix
             </Link>
             <p className="text-secondary dark:text-secondary-dark text-sm">
               Building the future of digital experiences with cutting-edge technology and innovative solutions.
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-gray-100/30 dark:border-gray-700/30">
+        <div className="mt-12 pt-8 border-t border-gray-100/30 dark:border-blue-dark-600/30">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary dark:text-secondary-dark text-sm">
               © {new Date().getFullYear()} YourBrand. All rights reserved.
