@@ -4,11 +4,14 @@
 
 @layer base {
   body {
-    @apply bg-background text-primary transition-colors duration-300;
+    background-color: var(--background-light);
+    color: var(--foreground-light);
+    transition: background-color 300ms, color 300ms;
   }
 
   .dark body {
-    @apply bg-background-dark text-primary-dark;
+    background-color: var(--background-dark);
+    color: var(--foreground-dark);
   }
 
   :root {

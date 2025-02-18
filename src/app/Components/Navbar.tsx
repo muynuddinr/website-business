@@ -67,31 +67,20 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggleButton />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50/40 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-primary hover:text-blue-600 dark:text-primary-dark dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-900/40 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
-                <svg
-                  className="block h-6 w-6 transform transition-transform duration-300 ease-in-out"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                <svg
-                  className="block h-6 w-6 transform transition-transform duration-300 ease-in-out"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
@@ -106,12 +95,12 @@ const Navbar = () => {
           isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden backdrop-blur-2xl`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-white/95 to-white/90">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-white/95 to-white/90 dark:from-gray-900/95 dark:to-gray-900/90">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
-              className="text-gray-700 hover:text-blue-600 block px-4 py-3 rounded-lg text-base font-bold tracking-wider hover:bg-blue-50/40 transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg [text-shadow:_0_1px_1px_rgb(0_0_0_/_5%)]"
+              className="text-primary hover:text-blue-600 dark:text-primary-dark dark:hover:text-blue-400 block px-4 py-3 rounded-lg text-base font-bold tracking-wider hover:bg-blue-50/40 dark:hover:bg-blue-900/40 transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
