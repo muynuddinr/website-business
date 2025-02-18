@@ -1,9 +1,11 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTheme } from './ThemeProvider';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const menuItems = [
     { name: 'Home', path: '/' },
@@ -13,8 +15,25 @@ const Navbar = () => {
     { name: 'Support', path: '/support' },
   ];
 
+  const ThemeToggleButton = () => (
+    <button
+      onClick={toggleTheme}
+      className="relative p-2 rounded-lg text-primary hover:text-blue-600 dark:text-primary-dark dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-900/40 transition-all duration-300"
+    >
+      {theme === 'light' ? (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+        </svg>
+      ) : (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+        </svg>
+      )}
+    </button>
+  );
+
   return (
-    <nav className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-2xl shadow-lg border-b border-gray-100/30 sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-white/95 to-white/90 dark:from-gray-900/95 dark:to-gray-900/90 backdrop-blur-2xl shadow-lg border-b border-gray-100/30 dark:border-gray-700/30 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo/Brand - Enhanced with stronger gradient and text shadow */}
@@ -30,13 +49,14 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.path}
-                className="relative text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-bold tracking-wider transition-all duration-300 ease-out hover:bg-blue-50/40 group overflow-hidden [text-shadow:_0_1px_1px_rgb(0_0_0_/_5%)]"
+                className="relative text-primary hover:text-blue-600 dark:text-primary-dark dark:hover:text-blue-400 px-4 py-2 rounded-lg text-sm font-bold tracking-wider transition-all duration-300 ease-out hover:bg-blue-50/40 dark:hover:bg-blue-900/40 group overflow-hidden"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out rounded-full"></span>
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-pink-500/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out rounded-lg"></span>
               </Link>
             ))}
+            <ThemeToggleButton />
             {/* Contact Button - Enhanced with stronger gradient and glow */}
             <Link
               href="/contact"
